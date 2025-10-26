@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <title>Пример позиционирования в CSS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            color: white;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        /* static – позиционирование по умолчанию */
+        .static {
+            position: static;
+            background-color: #777;
+        }
+
+        /* relative – смещение относительно исходной позиции */
+        .relative {
+            position: relative;
+            top: 20px;
+            left: 30px;
+            background-color: #3b82f6;
+        }
+
+        /* absolute – позиционирование относительно ближайшего позиционированного предка (здесь body) */
+        .absolute {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #ef4444;
+        }
+
+        /* fixed – фиксированное позиционирование относительно окна браузера */
+        .fixed {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: #10b981;
+        }
+
+        /* sticky – прилипает к верхней части окна при прокрутке */
+        .sticky-container {
+            height: 200px;
+            border: 2px dashed #ccc;
+            margin-top: 20px;
+            padding-top: 10px;
+        }
+
+        .sticky {
+            position: sticky;
+            top: 0;
+            background-color: #f59e0b;
+            padding: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Примеры позиционирования в CSS</h1>
+
+<div class="box static">static</div>
+
+<div class="box relative">relative</div>
+
+<div class="box absolute">absolute</div>
+
+<div class="box fixed">fixed</div>
+
+<p>Прокрутите страницу вниз, чтобы увидеть <code>sticky</code> в действии:</p>
+
+<div class="sticky-container">
+    <div class="sticky">sticky</div>
+    <p>Этот блок будет "прилипать" к верху окна при прокрутке страницы внутри контейнера.</p>
+    <p>Прокручивайте эту область, чтобы проверить работу <code>sticky</code>.</p>
+    <p>Дополнительный текст для прокрутки...</p>
+    <p>Дополнительный текст для прокрутки...</p>
+    <p>Дополнительный текст для прокрутки...</p>
+    <p>Дополнительный текст для прокрутки...</p>
+</div>
+
+<!-- Добавим высоты для демонстрации прокрутки -->
+<div style="height: 600px;"></div>
+
+</body>
+</html>
